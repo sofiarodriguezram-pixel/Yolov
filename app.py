@@ -14,27 +14,34 @@ st.set_page_config(
 )
 
 # --------------------------
-# CSS para fondo degradado
+# CSS para fondo y fuente
 # --------------------------
 st.markdown(
     """
     <style>
-    /* Fondo de toda la app */
-    body {
+    /* Fuente global y fondo degradado */
+    html, body, [class*="css"]  {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
         background: linear-gradient(135deg, #FFD700, #FF8C00, #FF4500, #8A2BE2, #191970);
         color: white;
     }
 
-    /* Contenedores con ligera transparencia */
-    .stContainer {
+    /* Contenedores principales con transparencia */
+    .css-1d391kg, .css-1v0mbdj { 
         background-color: rgba(0,0,0,0.2);
         border-radius: 10px;
         padding: 10px;
     }
 
     /* Títulos y subtítulos */
-    .stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {
+    h1, h2, h3, h4, h5, h6 {
         color: #FFFFFF;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    /* Barra lateral */
+    .css-1d391kg .css-1v0mbdj {
+        background-color: rgba(0,0,0,0.3);
     }
     </style>
     """,
@@ -66,10 +73,10 @@ def load_yolov5_model(model_path='yolov5s.pt'):
         st.info("""
         Recomendaciones:
         1. Instalar versión compatible de PyTorch y YOLOv5:
-           ```
-           pip install torch==1.12.0 torchvision==0.13.0
-           pip install yolov5==7.0.9
-           ```
+           
+pip install torch==1.12.0 torchvision==0.13.0
+pip install yolov5==7.0.9
+
         2. Asegúrate de tener el archivo del modelo en la ubicación correcta
         3. Si el problema persiste, intenta descargar el modelo directamente de torch hub
         """)
@@ -82,7 +89,7 @@ Esta aplicación utiliza YOLOv5 para detectar objetos en imágenes capturadas co
 Ajusta los parámetros en la barra lateral para personalizar la detección.
 """)
 
-# Cargar el modelo
+# Cargar modelo
 with st.spinner("Cargando modelo YOLOv5..."):
     model = load_yolov5_model()
 
