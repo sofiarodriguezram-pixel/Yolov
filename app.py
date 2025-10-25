@@ -14,34 +14,50 @@ st.set_page_config(
 )
 
 # --------------------------
-# CSS para fondo y fuente
+# CSS elegante para fondo y fuente
 # --------------------------
 st.markdown(
     """
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-    /* Fuente global y fondo degradado */
+    /* Fuente global y fondo degradado suave */
     html, body, [class*="css"]  {
-        font-family: 'Comic Sans MS', cursive, sans-serif;
-        background: linear-gradient(135deg, #FFD700, #FF8C00, #FF4500, #8A2BE2, #191970);
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(135deg, #FFA07A, #FF7F50, #6A5ACD, #483D8B);
         color: white;
     }
 
-    /* Contenedores principales con transparencia */
+    /* Contenedores principales con transparencia y bordes redondeados */
     .css-1d391kg, .css-1v0mbdj { 
-        background-color: rgba(0,0,0,0.2);
-        border-radius: 10px;
-        padding: 10px;
+        background-color: rgba(0,0,0,0.25);
+        border-radius: 12px;
+        padding: 15px;
     }
 
     /* Títulos y subtítulos */
     h1, h2, h3, h4, h5, h6 {
         color: #FFFFFF;
-        font-family: 'Comic Sans MS', cursive, sans-serif;
+        font-family: 'Roboto', sans-serif;
     }
 
-    /* Barra lateral */
+    /* Barra lateral con transparencia */
     .css-1d391kg .css-1v0mbdj {
         background-color: rgba(0,0,0,0.3);
+        border-radius: 12px;
+        padding: 15px;
+    }
+
+    /* Scrollbar personalizada */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(255,255,255,0.3);
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: rgba(0,0,0,0.1);
+        border-radius: 4px;
     }
     </style>
     """,
