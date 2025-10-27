@@ -25,12 +25,13 @@ page_bg = """
     [data-testid="stSidebar"] {
         background-color: #f9fbfd;
     }
-    .image-frame {
-        border: 3px solid #d6e0f5;
+    /* Marcos para imágenes dentro del contenedor */
+    div[data-testid="stImage"] img {
+        border: 3px solid #c9d6f0;
         border-radius: 15px;
-        padding: 10px;
-        background-color: white;
-        box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+        padding: 8px;
+        background-color: #ffffff;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
     }
     h1, h2, h3 {
         color: #1b3b6f;
@@ -115,9 +116,7 @@ if model:
                 with col1:
                     st.subheader("🖼️ Imagen con detecciones")
                     results.render()
-                    st.markdown('<div class="image-frame">', unsafe_allow_html=True)
                     st.image(cv2_img, channels='BGR', use_container_width=True)
-                    st.markdown('</div>', unsafe_allow_html=True)
 
                 with col2:
                     st.subheader("📋 Objetos detectados")
